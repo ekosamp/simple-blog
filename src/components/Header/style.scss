@@ -1,0 +1,52 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.header {
+  height: 4rem;
+  background-color: $white;
+  @include box-shadow(0, 0.01rem, 0.2rem, #807f7f47);
+  @include vertical-element();
+  &__inner {
+    width: 100%;
+    @include padding(x, 1rem);
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+  }
+  &__logo {
+    @include font-size(28);
+    @include margin(bottom, 0);
+  }
+}
+
+.menu {
+  li {
+    display: inline-block;
+  }
+  a {
+    display: inline-block;
+    @include padding(all, 0.25rem 0.5rem);
+    @include border-radius(all, null, 0.125rem);
+  }
+}
+
+@include breakpoint-lg {
+  .post-tags {
+    display: block;
+    grid-column: 9 / 13;
+    background: white;
+    padding: 20px;
+  }
+}
+
+
+@include breakpoint-lg {
+  .header {
+    &__inner {
+      max-width: $layout-base-width;
+    }
+    &__logo {
+      @include font-size(32);
+    }
+  }
+}

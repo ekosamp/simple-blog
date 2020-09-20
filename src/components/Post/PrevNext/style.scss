@@ -1,0 +1,40 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.prev-next {
+  li {
+    &:first-child {
+      text-align: left;
+    }
+    &:last-child {
+      text-align: right;
+      @include margin(top, 1.5rem);
+    }
+  }
+  span {
+    display: block;
+  }
+  &__label {
+    @include margin(bottom, 0.5rem);
+  }
+}
+
+@include breakpoint-lg {
+  .prev-next {
+    grid-column: 1 / 9;
+    grid-row: 6 / 6;
+    background: white;
+    padding: 20px;
+    @include flexbox();
+    @include justify-content(space-between);
+    li {
+      &:first-child {
+        width: 40%;
+      }
+      &:last-child {
+        width: 40%;
+        @include margin(top, 0);
+      }
+    }
+  }
+}
